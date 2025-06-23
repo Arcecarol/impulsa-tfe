@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil Docente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .project-detail {
+            display: none;
+            margin-top: 1rem;
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+
+        .project-detail.show {
+            display: block;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .tab {
+            padding: 0.5rem 1rem;
+            background: #ddd;
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+
+        .tab.active {
+            background: #007bff;
+            color: #fff;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .rating {
+            font-weight: bold;
+            margin-top: 0.5rem;
+        }
+
+        .assign-btn {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+
+        .assign-btn:hover {
+            background-color: #218838;
+        }
+
+        .postulantes-container {
+            margin-top: 15px;
+            padding: 12px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .postulante-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .postulante-info {
+            font-size: 14px;
+        }
+
+        .btn-asignar-estudiante {
+            background-color: #20A677;
+            border: none;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-asignar-estudiante:hover {
+            background-color: #1b8d65;
+        }
+
+        .assign-btn {
+            margin-top: 10px;
+            background-color: #ED8731;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .assign-btn:hover {
+            background-color: #f39b52;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <img src="img/impulsablanco.png" alt="Logo" class="logo-img">
+        </div>
+
+
+        <ul class="nav-links">
+            <li><a href="home.html">Inicio</a></li>
+            <li><a href="docente.html">Perfil</a></li>
+            <li><a href="home.html">Cerrar sesión</a></li>
+        </ul>
+
+        <div class="right-buttons">
+            <a href="contacto.html" class="contact-btn">Contacto</a>
+            <a href="contacto.html" class="contact-btn">FAQ</a>
+        </div>
+    </header>
+
+    <section class="hero hero-small">
+        <h1>PERFIL DOCENTE</h1>
+    </section>
+
+    <section class="perfil-container">
+        <div class="sidebar">
+            <ul class="perfil-menu">
+                <li class="active" data-section="datos-personales">Datos Personales</li>
+                <li data-section="proyectos">Proyectos</li>
+            </ul>
+        </div>
+
+        <div class="perfil-content">
+            <!-- DATOS PERSONALES -->
+            <div class="perfil-section active" id="datos-personales">
+                <h2>Datos Personales</h2>
+                <form>
+                    <label>Nombre: <input type="text" placeholder="Nombre completo" /></label>
+                    <label>Correo Institucional: <input type="email" placeholder="docente@universidad.cl" /></label>
+                    <label>Departamento: <input type="text" placeholder="Ej. Ingeniería Informática" /></label>
+                    <label>Teléfono de Contacto: <input type="tel" placeholder="+56 9 1234 5678" /></label>
+                    <label>CV Académico: <input type="file" /></label>
+                    <div class="perfil-buttons">
+                        <button type="submit" class="primary">Guardar</button>
+                        <button type="button" class="secondary">Cambiar Contraseña</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- PROYECTOS -->
+            <div class="perfil-section" id="proyectos">
+                <h2>Proyectos</h2>
+
+                <div class="submenu">
+                    <button class="subtab-button active" data-subsection="asignados">Proyectos Asignados</button>
+                    <button class="subtab-button" data-subsection="sin-asignar">Proyectos Sin Asignar</button>
+                </div>
+
+                <div class="filters">
+                    <input type="text" id="filter-nombre" placeholder="Nombre del alumno">
+                    <select id="filter-area">
+                        <option value="">Todas las áreas</option>
+                        <option value="Salud">Salud</option>
+                        <option value="Ambiental">Ambiental</option>
+                    </select>
+                    <button onclick="filtrarProyectos()">Buscar</button>
+                </div>
+
+                <div id="asignados" class="subsection active">
+
+                    <div class="project-card" data-nombre="Juan Pérez" data-area="Salud">
+                        <img src="img/e5.png" alt="Proyecto Telemedicina">
+                        <div class="project-info">
+                            <h3>Plataforma de Telemedicina</h3>
+                            <p><strong>Estudiante:</strong> Juan Pérez</p>
+                            <p><strong>Área:</strong> Salud</p>
+                            <p><strong>Estado:</strong> En desarrollo</p>
+                            <button class="view-more">Ver más</button>
+                        </div>
+
+                        <div class="project-detail">
+                            <div class="tabs">
+                                <div class="tab active" data-tab="eval1-jp">Evaluación 1</div>
+                                <div class="tab" data-tab="eval2-jp">Evaluación 2</div>
+                                <div class="tab" data-tab="eval3-jp">Evaluación 3</div>
+                            </div>
+
+                            <div class="tab-content active" id="eval1-jp">
+                                <div class="pdf-container">PDF de evaluación 1</div>
+                                <div class="comments">Buen trabajo inicial.</div>
+                                <div class="rating">Nota: 6.0</div>
+                            </div>
+
+                            <div class="tab-content" id="eval2-jp">
+                                <div class="pdf-container">PDF de evaluación 2</div>
+                                <div class="comments">Debe mejorar redacción.</div>
+                                <div class="rating">Nota: 5.8</div>
+                            </div>
+
+                            <div class="tab-content" id="eval3-jp">
+                                <div class="missing">Aún sin evaluación.</div>
+                            </div>
+
+                            <div class="project-assign-detail">
+                                <p><strong>Asignado por:</strong> Prof. Rodríguez</p>
+                                <button class="assign-btn">Cambiar asignación</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="sin-asignar" class="subsection">
+                    <div class="project-card" data-nombre="Ana Toro" data-area="Salud">
+                        <img src="img/e4.png" alt="Proyecto Telemedicina">
+                        <div class="project-info">
+                            <h3>Energía y Tecnología</h3>
+                            <p><strong>Empresa:</strong> Conect</p>
+                            <p><strong>Área:</strong> Ambiental</p>
+                            <p><strong>Estado:</strong> Sin asignar</p>
+                            <button class="view-more">Ver más</button>
+                        </div>
+
+                        <div class="project-detail">
+                            <p><strong>Requisitos:</strong> Conocimiento en energias renovables.</p>
+                            <p><strong>Duración:</strong> 3 meses</p>
+                            <button class="assign-btn">Asignar a estudiante</button>
+
+                            <div class="postulantes-container">
+                                <h4>Estudiantes postulantes</h4>
+
+                                <div class="postulante-card">
+                                    <div class="postulante-info">
+                                        <strong>Nombre:</strong> Juan Pérez<br />
+                                        <strong>Carrera:</strong> Ingeniería Ambiental<br />
+                                        <strong>Email:</strong> juan.perez@universidad.cl
+                                    </div>
+                                    <button class="btn-asignar-estudiante">Asignar</button>
+                                </div>
+
+                                <div class="postulante-card">
+                                    <div class="postulante-info">
+                                        <strong>Nombre:</strong> Sofía García<br />
+                                        <strong>Carrera:</strong> Tecnología<br />
+                                        <strong>Email:</strong> sofia.garcia@universidad.cl
+                                    </div>
+                                    <button class="btn-asignar-estudiante">Asignar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Tabs principales
+            const mainTabs = document.querySelectorAll(".perfil-menu li");
+            const mainSections = document.querySelectorAll(".perfil-section");
+
+            mainTabs.forEach(tab => {
+                tab.addEventListener("click", () => {
+                    const target = tab.getAttribute("data-section");
+                    mainTabs.forEach(t => t.classList.remove("active"));
+                    mainSections.forEach(s => s.classList.remove("active"));
+                    tab.classList.add("active");
+                    document.getElementById(target).classList.add("active");
+                });
+            });
+
+            // Subtabs
+            const subtabButtons = document.querySelectorAll(".subtab-button");
+            const subtabs = document.querySelectorAll(".subsection");
+
+            subtabButtons.forEach(button => {
+                button.addEventListener("click", () => {
+                    const target = button.getAttribute("data-subsection");
+                    subtabButtons.forEach(b => b.classList.remove("active"));
+                    subtabs.forEach(s => s.classList.remove("active"));
+                    button.classList.add("active");
+                    document.getElementById(target).classList.add("active");
+                });
+            });
+
+            // Ver más
+            document.querySelectorAll('.view-more').forEach(button => {
+                button.addEventListener('click', () => {
+                    const card = button.closest('.project-card');
+                    const detail = card.querySelector('.project-detail');
+                    const isVisible = detail.classList.contains('show');
+
+                    document.querySelectorAll('.project-detail').forEach(d => d.classList.remove('show'));
+                    document.querySelectorAll('.view-more').forEach(b => b.classList.remove('active-no-bg'));
+
+                    if (!isVisible) {
+                        detail.classList.add('show');
+                        button.classList.add('active-no-bg');
+                    }
+                });
+            });
+
+            // Mostrar lista de postulantes
+            document.querySelectorAll('.assign-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    const container = button.nextElementSibling;
+                    const isVisible = container.style.display === 'block';
+                    container.style.display = isVisible ? 'none' : 'block';
+                });
+            });
+
+            // Asignar estudiante
+            document.querySelectorAll('.btn-asignar-estudiante').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const estudiante = btn.closest('.postulante-card').querySelector('.postulante-info').innerText;
+                    alert(`Estudiante asignado:\n\n${estudiante}`);
+                    // Aquí puedes enviar la información al backend vía AJAX o fetch()
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

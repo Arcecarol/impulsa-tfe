@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="img/impulsablanco.png" alt="Logo" class="logo-img" />
+        </div>
+        <nav>
+            <div class="burger" id="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="proyectos.html">Proyectos</a></li>
+                <li><a href="registro.html">Inicio Sesión/Registro</a></li>
+            </ul>
+        </nav>
+        <a href="#formulario-contacto" class="contact-btn">Contacto</a>
+    </header>
+
+    <main class="contact-wrapper">
+        <section class="form-container" id="formulario-contacto">
+            <h2>Contáctanos</h2>
+            <form>
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" required />
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" required />
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" required></textarea>
+                </div>
+                <button type="submit" class="form-submit">Enviar</button>
+            </form>
+        </section>
+
+        <section class="faq-section">
+            <h3>Preguntas Frecuentes</h3>
+
+            <div class="accordion">
+                <div class="accordion-header">¿Qué es Impulsa TFE?</div>
+                <div class="accordion-content">
+                    <p>Es un programa que conecta estudiantes con desafíos reales de empresas u organizaciones.</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">¿Tiene costo participar?</div>
+                <div class="accordion-content">
+                    <p>No, la participación es completamente gratuita para estudiantes y empresas.</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">¿Quiénes pueden participar?</div>
+                <div class="accordion-content">
+                    <p>Estudiantes universitarios y docentes, además de organizaciones colaboradoras.</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">¿Qué tipo de desafíos se aceptan?</div>
+                <div class="accordion-content">
+                    <p>Desafíos relacionados con cualquier disciplina académica y aplicables en el mundo real.</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">¿Cómo se presentan los resultados?</div>
+                <div class="accordion-content">
+                    <p>Los estudiantes entregan informes, prototipos o presentaciones según el desafío.</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">¿Cómo puedo proponer un desafío?</div>
+                <div class="accordion-content">
+                    <p>Desde la plataforma, registrándote como organización colaboradora.</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">¿Cuánto tiempo dura el proceso?</div>
+                <div class="accordion-content">
+                    <p>Depende del proyecto, pero generalmente coincide con un semestre académico.</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">¿Qué rol tienen los docentes?</div>
+                <div class="accordion-content">
+                    <p>Guiar, supervisar y evaluar el trabajo de los estudiantes.</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">¿Los estudiantes reciben reconocimiento?</div>
+                <div class="accordion-content">
+                    <p>Sí, el trabajo puede ser parte del TFE u otros proyectos curriculares.</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">¿A quién puedo contactar para más información?</div>
+                <div class="accordion-content">
+                    <p>Puedes escribirnos directamente a través del formulario de contacto o a nuestro correo
+                        institucional.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

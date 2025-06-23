@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Estudiante</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <img src="img/impulsablanco.png" alt="Logo" class="logo-img">
+        </div>
+
+
+        <ul class="nav-links">
+            <li><a href="home.html">Inicio</a></li>
+            <li><a href="proyectos.html">Proyectos</a></li>
+            <li><a href="student.html">Perfil</a></li>
+            <li><a href="home.html">Cerrar sesión</a></li>
+
+
+
+        </ul>
+
+        <div class="right-buttons">
+            <a href="contacto.html" class="contact-btn">Contacto</a>
+            <a href="contacto.html" class="contact-btn">FAQ</a>
+        </div>
+    </header>
+
+    <section class="hero hero-small">
+        <h1> PERFIL ESTUDIANTE</h1>
+    </section>
+
+    <section class="perfil-container">
+        <div class="sidebar">
+            <ul class="perfil-menu">
+                <li class="active" data-section="datos-personales">Datos Personales</li>
+                <li data-section="postulaciones">Mis Postulaciones</li>
+                <li data-section="proyecto">Proyecto</li>
+
+            </ul>
+        </div>
+
+        <div class="perfil-content">
+            <!-- DATOS PERSONALES -->
+            <div class="perfil-section active" id="datos-personales">
+                <h2>Datos Personales</h2>
+                <form>
+                    <label>Nombre: <input type="text" placeholder="Nombre" /></label>
+                    <label>Apellidos: <input type="text" placeholder="Apellidos" /></label>
+                    <label>Correo Electrónico: <input type="email" placeholder="correo@ejemplo.com" /></label>
+                    <label>Teléfono Móvil: <input type="tel" placeholder="+56 9 1234 5678" /></label>
+                    <label>CV (opcional): <input type="file" /></label>
+                    <div class="perfil-buttons">
+                        <button type="submit" class="primary">Guardar</button>
+                        <button type="button" class="secondary">Cambiar Contraseña</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- PROYECTO -->
+            <div class="perfil-section" id="proyecto">
+                <h2>Proyecto Asignado</h2>
+
+                <div class="project-card" data-area="tecnologia-salud">
+                    <img src="img/e5.png" alt="Desarrollo de App Móvil de Salud Pública">
+                    <div class="project-info">
+                        <h3>Desarrollo de App Móvil de Salud Pública</h3>
+                        <p class="project-area">Área: Tecnología - Salud</p>
+                        <p class="project-description">
+                            Diseño e implementación de una app para monitoreo de pacientes crónicos.
+                        </p>
+
+                        <!-- Detalles -->
+                        <div class="project-assigned-details">
+                            <p><strong>Nombre:</strong> Desarrollo de App Móvil de Salud Pública</p>
+                            <p><strong>Requisitos:</strong> Conocimientos en desarrollo móvil y bases de datos</p>
+                            <p><strong>Duración:</strong> 4 meses</p>
+                            <p><strong>Descripción detallada:</strong> Este proyecto busca crear una app que permita a
+                                pacientes con
+                                enfermedades crónicas monitorear sus signos vitales, gestionar citas y recibir alertas
+                                médicas en
+                                tiempo real. La app será integrada con una base de datos central y se enfocará en
+                                usabilidad y
+                                seguridad.</p>
+                        </div>
+
+                        <!-- Evaluaciones -->
+                        <div class="evaluaciones-proyecto">
+                            <h2>Evaluaciones</h2>
+
+                            <div class="tabs">
+                                <div class="tab active" data-tab="eval1">Evaluación 1</div>
+                                <div class="tab" data-tab="eval2">Evaluación 2</div>
+                                <div class="tab" data-tab="eval3">Evaluación 3</div>
+                            </div>
+
+                            <div class="tab-content active" id="eval1">
+                                <div class="archivo-subido">
+                                    <div class="icono-pdf">📄</div>
+                                    <div class="archivo-detalle">
+                                        <h4>Evaluacion1_Telemedicina.pdf</h4>
+                                        <p class="fecha-subida">Subido el: <strong>01/06/2025</strong></p>
+                                    </div>
+                                    <a href="pdf/Evaluacion1_Telemedicina.pdf" target="_blank" class="ver-archivo">Ver
+                                        archivo</a>
+                                </div>
+                                <div class="comentarios">
+                                    <h3>Comentarios del Docente</h3>
+                                    <p class="comentario-texto">Buen trabajo en general. Revisa el análisis de
+                                        resultados.</p>
+                                    <p class="rating">Calificación: <strong>88/100</strong></p>
+                                </div>
+                            </div>
+
+                            <div class="tab-content" id="eval2">
+                                <div class="estado-evaluacion">
+                                    <div class="estado-info">
+                                        <h4>Estado: Sin archivo</h4>
+                                        <p class="fecha-limite">Fecha límite de subida: <strong>10/06/2025</strong></p>
+                                    </div>
+                                </div>
+                                <form id="upload-form-eval2" class="form-subida">
+                                    <label for="archivo-eval2">Subir archivo PDF:</label>
+                                    <input type="file" name="archivo-eval2" id="archivo-eval2" />
+                                    <button type="submit" class="primary">Subir Archivo</button>
+                                </form>
+                            </div>
+
+                            <div class="tab-content" id="eval3">
+                                <div class="estado-evaluacion">
+                                    <div class="estado-info">
+                                        <h4>Estado: Sin archivo</h4>
+                                        <p class="fecha-limite">Fecha límite de subida: <strong>20/06/2025</strong></p>
+                                    </div>
+                                </div>
+                                <form id="upload-form-eval3" class="form-subida">
+                                    <label for="archivo-eval3">Subir archivo PDF:</label>
+                                    <input type="file" name="archivo-eval3" id="archivo-eval3" />
+                                    <button type="submit" class="primary">Subir Archivo</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- POSTULACIÓN -->
+            <div class="perfil-section" id="postulaciones">
+                <h2>Mis Postulaciones</h2>
+
+                <!-- CARD 1 - ACEPTADA -->
+                <div class="postulacion-card aceptada">
+                    <img src="img/e5.png" alt="Proyecto Salud Pública">
+                    <div class="postulacion-info">
+                        <h3>Desarrollo de App Móvil de Salud Pública</h3>
+                        <p class="estado-postulacion"><strong>Estado:</strong> ✅ Aceptada</p>
+                        <button class="view-more">Ver más</button>
+                        <div class="postulacion-detalle">
+                            <p><strong>Área:</strong> Tecnología - Salud</p>
+                            <p><strong>Descripción:</strong> App para monitorear pacientes crónicos con alertas médicas.
+                            </p>
+                            <p><strong>Requisitos:</strong> Desarrollo móvil, bases de datos</p>
+                            <p><strong>Duración:</strong> 4 meses</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2 - RECHAZADA -->
+                <div class="postulacion-card rechazada">
+                    <img src="img/e5.png" alt="Proyecto Educación Virtual">
+                    <div class="postulacion-info">
+                        <h3>Plataforma de Educación Virtual</h3>
+                        <p class="estado-postulacion"><strong>Estado:</strong> ❌ Rechazada</p>
+                        <button class="view-more">Ver más</button>
+                        <div class="postulacion-detalle">
+                            <p><strong>Área:</strong> Educación - Tecnología</p>
+                            <p><strong>Descripción:</strong> Plataforma para clases online con videollamadas y
+                                evaluaciones.</p>
+                            <p><strong>Requisitos:</strong> React, Node.js</p>
+                            <p><strong>Duración:</strong> 3 meses</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3 - RECHAZADA -->
+                <div class="postulacion-card rechazada">
+                    <img src="img/e5.png" alt="Proyecto Big Data">
+                    <div class="postulacion-info">
+                        <h3>Análisis Predictivo con Big Data</h3>
+                        <p class="estado-postulacion"><strong>Estado:</strong> ❌ Rechazada</p>
+                        <button class="view-more">Ver más</button>
+                        <div class="postulacion-detalle">
+                            <p><strong>Área:</strong> Ciencia de Datos</p>
+                            <p><strong>Descripción:</strong> Análisis de grandes volúmenes de datos para proyecciones de
+                                salud
+                                pública.</p>
+                            <p><strong>Requisitos:</strong> Python, Machine Learning</p>
+                            <p><strong>Duración:</strong> 5 meses</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </section>
+    <script src="script.js"></script>
+
+</body>

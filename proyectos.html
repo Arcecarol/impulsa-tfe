@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos - Impulsa TFE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="img/impulsablanco.png" alt="Logo" class="logo-img">
+        </div>
+
+
+        <ul class="nav-links">
+            <li><a href="home.html">Inicio</a></li>
+            <li><a href="proyectos.html">Proyectos</a></li>
+            <li><a href="student.html">Perfil</a></li>
+            <li><a href="home.html">Cerrar sesión</a></li>
+
+
+        </ul>
+
+        <div class="right-buttons">
+            <a href="contacto.html" class="contact-btn">Contacto</a>
+            <a href="contacto.html" class="contact-btn">FAQ</a>
+        </div>
+    </header>
+
+    <section class="hero hero-small">
+        <div class="hero-text">
+            <h1><span class="highlight">Proyectos</span> destacados de Impulsa TFE</h1>
+        </div>
+    </section>
+
+    <section class="project-filter">
+        <h2 class="filter-title">Proyectos Destacados</h2>
+        <div class="filter-select">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#083A50" viewBox="0 0 24 24">
+                <path
+                    d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2zm-1 14H8v-2h3v2zm5 0h-3v-2h3v2zm1-4H7V8h10v4z" />
+            </svg>
+            <select id="area" name="area">
+                <option value="all">Todos</option>
+                <option value="tecnologia">Tecnología</option>
+                <option value="medioambiente">Medio Ambiente</option>
+                <option value="educacion">Educación</option>
+                <option value="salud">Salud</option>
+            </select>
+        </div>
+    </section>
+
+
+    <section class="project-list">
+        <!-- Ejemplo para proyecto 1 -->
+        <div class="project-card" data-area="tecnologia">
+            <img src="img/e5.png" alt="Proyecto 1">
+            <div class="project-info">
+                <h3>Proyecto Innovador</h3>
+                <p class="project-area">Área: Tecnología</p>
+                <p class="project-description">Descripción breve del proyecto...</p>
+                <button class="view-more">Ver más</button>
+
+                <!-- Detalles que se expanden -->
+                <div class="project-list-details">
+                    <p><strong>Nombre:</strong> Proyecto Innovador</p>
+                    <p><strong>Requisitos:</strong> Conocimientos básicos en programación y diseño UX</p>
+                    <p><strong>Área:</strong> Tecnología</p>
+                    <p><strong>Duración:</strong> 3 meses</p>
+                    <p><strong>Descripción detallada:</strong> Este proyecto busca desarrollar una plataforma web para
+                        la
+                        gestión automatizada de contenidos educativos, integrando IA para personalización del
+                        aprendizaje.</p>
+                    <button class="apply-button">Postular al proyecto</button>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Proyecto 2 -->
+        <div class="project-card" data-area="educacion">
+            <img src="img/e2.png" alt="Proyecto 2">
+            <div class="project-info">
+                <h3>Aprendiendo con IA</h3>
+                <p class="project-area">Área: Educación</p>
+                <p class="project-description">Descripción breve del proyecto...</p>
+                <button class="view-more">Ver más</button>
+
+                <!-- Detalles que se expanden -->
+                <div class="project-list-details">
+                    <p><strong>Nombre:</strong> Aprendiendo con IA</p>
+                    <p><strong>Requisitos:</strong> Conocimientos en inteligencia artificial básica</p>
+                    <p><strong>Área:</strong> Educación</p>
+                    <p><strong>Duración:</strong> 2 meses</p>
+                    <p><strong>Descripción detallada:</strong> Este proyecto busca diseñar un curso virtual con módulos
+                        interactivos que usen IA para personalizar la enseñanza en función del progreso del estudiante.
+                    </p>
+                    <button class="apply-button">Postular al proyecto</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Proyecto 3 -->
+        <div class="project-card" data-area="salud">
+            <img src="img/e1.png" alt="Proyecto 3">
+            <div class="project-info">
+                <h3>Manejo de enfermedades crónicas</h3>
+                <p class="project-area">Área: Salud</p>
+                <p class="project-description">Descripción breve del proyecto...</p>
+                <button class="view-more">Ver más</button>
+
+                <!-- Detalles que se expanden -->
+                <div class="project-list-details">
+                    <p><strong>Nombre:</strong> Manejo de enfermedades crónicas</p>
+                    <p><strong>Requisitos:</strong> Conocimientos en salud pública y herramientas digitales</p>
+                    <p><strong>Área:</strong> Salud</p>
+                    <p><strong>Duración:</strong> 4 meses</p>
+                    <p><strong>Descripción detallada:</strong> Este proyecto propone crear una plataforma de seguimiento
+                        y
+                        orientación para pacientes con enfermedades crónicas, con funcionalidades de reporte,
+                        seguimiento y
+                        alerta médica.</p>
+                    <button class="apply-button">Postular al proyecto</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Repite con diferentes valores de "data-area": salud, medioambiente, etc. -->
+
+    </section>
+    <div id="toast-notification" class="toast-notification">¡Postulación realizada con éxito!</div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

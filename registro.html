@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrarse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="login-page">
+
+    <div class="login-wrapper">
+        <div class="login-card">
+            <img src="img/impulsa.png" alt="Logo Impulsa TFE" class="login-logo" />
+            <h2 class="login-title">Crea tu cuenta</h2>
+
+            <form class="login-form">
+                <div class="login-input-group">
+                    <input type="text" placeholder="Nombre completo" required class="login-input" />
+                    <span class="login-icon">&#128100;</span> <!-- 👤 -->
+                </div>
+
+                <div class="login-input-group">
+                    <input type="email" placeholder="Correo electrónico" required class="login-input" />
+                    <span class="login-icon">&#9993;</span> <!-- ✉ -->
+                </div>
+
+                <div class="login-input-group">
+                    <input type="password" placeholder="Contraseña" required class="login-input" />
+                    <span class="login-icon">&#128274;</span> <!-- 🔒 -->
+                </div>
+
+                <div class="login-input-group">
+                    <input type="password" placeholder="Repetir contraseña" required class="login-input" />
+                    <span class="login-icon">&#128274;</span>
+                </div>
+
+                <div class="login-input-group">
+                    <select class="login-input" required>
+                        <option value="" disabled selected>Selecciona tu rol</option>
+                        <option value="estudiante">Estudiante</option>
+                        <option value="docente">Docente</option>
+                        <option value="empresa">Empresa</option>
+                    </select>
+                    <span class="login-icon">&#128188;</span> <!-- 💼 -->
+                </div>
+
+                <div class="login-actions">
+                    <button type="submit" class="login-btn-primary">Registrarse</button>
+                    <button type="button" class="login-btn-outline" onclick="location.href='login.html'"> Ya tengo
+                        cuenta
+                    </button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

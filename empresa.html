@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil Empresa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <img src="img/impulsablanco.png" alt="Logo" class="logo-img">
+        </div>
+
+
+        <ul class="nav-links">
+            <li><a href="home.html">Inicio</a></li>
+            <li><a href="empresa.html">Perfil</a></li>
+            <li><a href="home.html">Cerrar sesión</a></li>
+        </ul>
+
+        <div class="right-buttons">
+            <a href="contacto.html" class="contact-btn">Contacto</a>
+            <a href="contacto.html" class="contact-btn">FAQ</a>
+        </div>
+    </header>
+
+    <section class="hero hero-small">
+        <h1>PERFIL EMPRESA</h1>
+    </section>
+
+    <section class="empresa-container">
+        <div class="empresa-sidebar">
+            <ul class="empresa-menu">
+                <li class="active" data-section="empresa-datos">Datos de la Empresa</li>
+                <li data-section="empresa-proyectos">Proyectos</li>
+                <li data-section="agregar-proyecto" id="tab-agregar-proyecto" style="display: none;">Agregar Proyecto
+                </li>
+            </ul>
+        </div>
+
+        <div class="empresa-content">
+
+            <!-- DATOS DE LA EMPRESA -->
+            <div class="empresa-section active" id="empresa-datos">
+                <h2>Datos de la Empresa</h2>
+                <form id="empresa-form-datos" class="empresa-card">
+                    <div style="flex-shrink:0;">
+                        <img src="img/e5.png" alt="Logo Empresa" class="empresa-img" id="logo-preview" />
+                        <input type="file" id="input-logo" accept="image/*" style="margin-top:15px;" />
+                    </div>
+                    <div class="empresa-datos">
+                        <label for="empresa-nombre">Nombre:</label>
+                        <input type="text" id="empresa-nombre" value="Innovatech S.A." required />
+
+                        <label for="empresa-rubro">Rubro:</label>
+                        <input type="text" id="empresa-rubro" value="Tecnología y Servicios" required />
+
+                        <label for="empresa-direccion">Dirección:</label>
+                        <input type="text" id="empresa-direccion" value="Av. Principal 1234, Ciudad" required />
+
+                        <label for="empresa-telefono">Teléfono:</label>
+                        <input type="tel" id="empresa-telefono" value="+56 9 8765 4321" required />
+
+                        <label for="empresa-email">Email:</label>
+                        <input type="email" id="empresa-email" value="contacto@innovatech.cl" required />
+
+                        <label for="empresa-descripcion">Descripción:</label>
+                        <textarea id="empresa-descripcion"
+                            required>Empresa dedicada a la innovación tecnológica, desarrollando soluciones para mejorar la calidad de vida.</textarea>
+
+                        <div style="margin-top: 20px;">
+                            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- PROYECTOS -->
+            <div class="empresa-section" id="empresa-proyectos">
+                <h2>
+                    Proyectos</h2>
+                <button id="btn-nuevo-proyecto" title="Crear Nuevo Proyecto" class="btn-icon-circle">
+                    <span class="material-icons">+</span>
+                </button>
+
+                <div class="project-cards-container" id="project-list">
+                    <div class="project-card">
+                        <img src="img/e5.png" alt="Proyecto 1" />
+                        <div class="project-info">
+                            <h3>Plataforma de Telemedicina</h3>
+                            <p><strong>Área:</strong> Salud</p>
+                            <p><strong>Duración:</strong> 6 meses</p>
+                            <p><strong>Estado:</strong> En desarrollo</p>
+                            <button class="view-more">Ver más</button>
+                        </div>
+                        <button class="btn-delete" title="Eliminar proyecto" aria-label="Eliminar proyecto">
+                            🗑️
+                        </button>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="img/e5.png" alt="Proyecto 2" />
+                        <div class="project-info">
+                            <h3>Sistema de Gestión Ambiental</h3>
+                            <p><strong>Área:</strong> Medio Ambiente</p>
+                            <p><strong>Duración:</strong> 1 año</p>
+                            <p><strong>Estado:</strong> Finalizado</p>
+                            <button class="view-more">Ver más</button>
+                        </div>
+                        <button class="btn-delete" title="Eliminar proyecto" aria-label="Eliminar proyecto">
+                            🗑️
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FORMULARIO AGREGAR PROYECTO COMO UNA PESTAÑA -->
+            <div class="empresa-section" id="agregar-proyecto">
+                <h2 class="titulo-proyecto">Agregar Nuevo Proyecto</h2>
+                <form id="empresa-form-proyecto" class="form-card">
+                    <div class="form-group-empresa">
+                        <label for="empresa-nombre-proyecto">Nombre del Proyecto:</label>
+                        <input type="text" id="empresa-nombre-proyecto" name="nombre" required />
+                    </div>
+                    <div class="form-group-empresa">
+                        <label for="empresa-area">Área:</label>
+                        <select id="empresa-area" name="area" required>
+                            <option value="">-- Seleccionar Área --</option>
+                            <option value="salud">Salud</option>
+                            <option value="tecnologia">Tecnología</option>
+                            <option value="medio-ambiente">Medio Ambiente</option>
+                            <option value="educacion">Educación</option>
+                        </select>
+                    </div>
+                    <div class="form-group-empresa">
+                        <label for="empresa-duracion">Duración:</label>
+                        <input type="text" id="empresa-duracion" name="duracion" required />
+                    </div>
+                    <div class="form-group-empresa">
+                        <label for="empresa-descripcion-proyecto">Descripción:</label>
+                        <textarea id="empresa-descripcion-proyecto" name="descripcion" required></textarea>
+                    </div>
+
+                    <div class="form-buttons perfil-buttons">
+                        <button type="button" id="btn-cancelar-proyecto" class="secondary">Cancelar</button>
+                        <button type="submit" class="primary">Enviar</button>
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+    </section>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuItems = document.querySelectorAll(".empresa-menu li");
+            const sections = document.querySelectorAll(".empresa-section");
+
+            function activarTab(sectionId) {
+                // Desactiva todo
+                menuItems.forEach(item => item.classList.remove("active"));
+                sections.forEach(sec => sec.classList.remove("active"));
+
+                // Activa sección correspondiente
+                const tab = document.querySelector(`.empresa-menu li[data-section="${sectionId}"]`);
+                const section = document.getElementById(sectionId);
+                if (tab) tab.classList.add("active");
+                if (section) section.classList.add("active");
+            }
+
+            // Eventos del menú lateral
+            menuItems.forEach(item => {
+                item.addEventListener("click", () => {
+                    const sectionId = item.getAttribute("data-section");
+                    activarTab(sectionId);
+                });
+            });
+
+            // Botón ➕ para nuevo proyecto
+            const btnNuevo = document.getElementById("btn-nuevo-proyecto");
+            btnNuevo.addEventListener("click", () => {
+                activarTab("agregar-proyecto");
+            });
+
+            // Botón cancelar del formulario
+            const btnCancelar = document.getElementById("btn-cancelar-proyecto");
+            btnCancelar.addEventListener("click", () => {
+                activarTab("empresa-proyectos");
+            });
+        });
+    </script>
+</body>
+
+</html>
