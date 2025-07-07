@@ -903,11 +903,11 @@ form input {
 }
 
 .aceptada {
-    border-left: 8px solid green;
+    border-left: 8px solid #008000;
 }
 
 .rechazada {
-    border-left: 8px solid red;
+    border-left: 8px solid #ff0000;
 }
 
 
