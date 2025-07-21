@@ -4,6 +4,23 @@
     box-sizing: border-box;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -15,7 +32,7 @@ body {
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 8px 30px;
     position: fixed;
@@ -28,16 +45,6 @@ body {
     z-index: 1000;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(6px);
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo-img {
-    height: 40px;
-    width: auto;
 }
 
 .nav-links {
@@ -62,6 +69,8 @@ body {
 .right-buttons {
     display: flex;
     gap: 10px;
+    justify-content: center;
+    align-items: center;
 }
 
 .contact-btn {
@@ -81,7 +90,59 @@ body {
     border-color: white;
 }
 
+/* Botón hamburguesa */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
 
+.menu-toggle .material-icons-outlined {
+    font-size: 32px;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background: rgba(8, 58, 80, 0.95);
+        border-radius: 20px;
+        margin-top: 60px;
+        padding: 20px 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 999;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .right-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
 
 .hero {
     background-image: url("img/fondoh.jpg");

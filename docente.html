@@ -2,11 +2,13 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Perfil Docente</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impulsa TFE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
     <style>
         .project-detail {
             display: none;
@@ -126,17 +128,24 @@
             <img src="img/impulsablanco.png" alt="Logo" class="logo-img">
         </div>
 
-
-        <ul class="nav-links">
-            <li><a href="home.html">Inicio</a></li>
-            <li><a href="docente.html">Perfil</a></li>
-            <li><a href="home.html">Cerrar sesión</a></li>
-        </ul>
-
-        <div class="right-buttons">
-            <a href="contacto.html" class="contact-btn">Contacto</a>
-            <a href="contacto.html" class="contact-btn">FAQ</a>
+        <!-- Botón hamburguesa -->
+        <div class="menu-toggle" id="menu-toggle">
+            <span class="material-icons-outlined">menu</span>
         </div>
+
+        <!-- Menú oculto/desplegable -->
+        <nav class="nav-menu" id="nav-menu">
+            <ul class="nav-links">
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="docente.html">Perfil</a></li>
+                <li><a href="home.html">Cerrar Sesión</a></li>
+            </ul>
+
+            <div class="right-buttons">
+                <a href="contacto.html" class="contact-btn">Contacto</a>
+                <a href="contacto.html" class="contact-btn">FAQ</a>
+            </div>
+        </nav>
     </header>
 
     <section class="hero hero-small">
